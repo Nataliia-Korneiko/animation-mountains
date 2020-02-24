@@ -1,0 +1,82 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.mountains {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.mountains__container {
+  position: relative;
+  width: 600px;
+}
+
+.mountains__img {
+  width: 600px;
+}
+
+.mountains__img-transition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.mountains__img-transition:hover {
+  opacity: 1;
+}
+
+.mountains__img-fade::after {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  content: "The mountains...";
+  text-transform: uppercase;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.mountains__img-fade:hover::after {
+  opacity: 0.5;
+}
